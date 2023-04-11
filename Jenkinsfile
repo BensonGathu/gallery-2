@@ -12,6 +12,14 @@ pipeline{
             steps{
                 echo "testing application"
                 sh "npm test"
+                post {
+                failure {
+                    echo "testing failed"
+                    }
+                success {
+                    echo "testing success"
+                    }
+
             }  
         } 
 
