@@ -15,9 +15,13 @@ pipeline{
                 post {
                 failure {
                     echo "testing failed"
+                    emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test Failed'
+
                     }
                 success {
                     echo "testing success"
+                        emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test Success'
+
                     }
 
             }  
