@@ -21,7 +21,7 @@ pipeline{
                     }
 
             }  
-        } 
+        } }
 
 //         stage('Deploy to Heroku') {
 //             steps {
