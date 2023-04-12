@@ -12,7 +12,7 @@ pipeline{
             steps{
                 echo "testing application"
                 sh "npm test"}
-                post {
+                post { 
                 failure {
                     echo "testing failed"
                     emailext body: 'A Test EMail', recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']], subject: 'Test Failed'
