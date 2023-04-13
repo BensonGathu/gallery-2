@@ -71,7 +71,7 @@ pipeline{
 
                 to: EMAIL_RECEPIENT
         }
-    }
+    }}
 
         stage('Deploy to Heroku') {
             steps {
@@ -82,5 +82,5 @@ pipeline{
 } 
     }
 }
-}
+
  
