@@ -29,6 +29,11 @@ pipeline{
 
     }
     stages{
+        stage ("Clone the repository"){
+            steps{
+                git 'https://github.com/BensonGathu/gallery-2.git'
+            }
+        }
         stage("Install Packages"){
             steps{
                 echo 'Installing packages'
@@ -76,7 +81,7 @@ pipeline{
         stage('Deploy to Heroku') {
             steps {
             withCredentials([usernameColonPassword(credentialsId: 'heroku', variable: 'HEROKU_CREDENTIALS' )]){
-            sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/infinite-coast-81166.git master'
+            sh 'git push https://${HEROKU_CREDENTIALS}@git.heroku.com/pure-ridge-90946.git master'
     }
   }
 } 
